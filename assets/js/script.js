@@ -62,128 +62,129 @@ var charLength = function () {
 // charLength()
 
 
-//(2)  ********* USER CRITERIA Validate at least one character type was entered *******
+//(2)  ********* LOWERCASE Prompt *******
+//(a) validate entered yes or no -
+//set safeguard for case or just letter
+//(b) if not y or n then send alert to pick valid answer
 var userCriteria = function () {
   var confirmLower = confirm("Do you want password to contain lowercase letters?");
   var confirmUpper = confirm("Do you want UPPER CASE letters in the password?");
   var confirmNumeric = confirm("DO you want numbers in your password?");
   var confirmSpecial = confirm("Do you want special characters in the password?");
-
+// debugger
   if (!confirmLower && !confirmUpper && !confirmNumeric && !confirmSpecial) {
     alert("Please pick at least one option.")
     userCriteria()
   }
   else {
-    var validUserChoices = []
-    if (confirmLower) {
-      //use lowercase in pw source string
-      console.log("yes lower");
-      validUserChoices += "abcdefghijklmnopqrstuvwxyz";
-    }
-    if (confirmUpper) {
-      console.log("no lower");
-      validUserChoices += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    }
-    if (confirmNumeric) {
-      console.log("no lower");
-      validUserChoices += "0123456789"
-    }
-
-    if (confirmSpecial) {
-      console.log("no lower");
-      validUserChoices += "$!@&%*~#^()"
-    }
-    console.log(validUserChoices, "validUserChoices");
-    return validUserChoices;
+  var validUserChoices = []
+  if (confirmLower) {
+    //use lowercase in pw source string
+    console.log("yes lower");
+    validUserChoices += "abcdefghijklmnopqrstuvwxyz";
   }
-
+  if (confirmUpper) {
+    console.log("Yes UPPER");
+    validUserChoices += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  }
+  if (confirmNumeric) {
+    console.log("Yes numbers");
+    validUserChoices += "0123456789"
+  }
+  if (confirmSpecial) {
+    console.log("Yes Special");
+    validUserChoices += "$!@&%*~#^()"
+  }
+  console.log(validUserChoices, "validUserChoices");
+  return validUserChoices;
+  }
 }
-// // charLower();
 
-// //(3) ********* UPPERCASE Prompt *******
-// //(a) validate entered yes or no -
-// //set safeguard for case or just letter
-// //(b) if not y or n then send alert to pick valid answer
-// var charUpper = function () {
-//   var confirmUpper = confirm("Do you want UPPERCASE letters in the password?")
 
-//   if (confirmUpper) {
-//     //use UPPERCASE in pw source string
-//     console.log("Yes UPPERS");
-//   }
-//   else {
-//     //then don't use UPPERCASE in the pw - don't add to pw string source
-//     console.log("No UPPERS")
-//   }
-// }
-// // charUpper();
+// charLower();
+
+//(3) ********* UPPERCASE Prompt *******
+//(a) validate entered yes or no -
+//set safeguard for case or just letter
+//(b) if not y or n then send alert to pick valid answer
+var charUpper = function () {
+  var confirmUpper = confirm("Do you want UPPERCASE letters in the password?")
+
+  if (confirmUpper) {
+    //use UPPERCASE in pw source string
+    console.log("Yes UPPERS");
+  }
+  else {
+    //then don't use UPPERCASE in the pw - don't add to pw string source
+    console.log("No UPPERS")
+  }
+}
+// charUpper();
 
 // (4) ********* NUMERIC Prompt *******
 //(a) validate entered yes or no -
 //set safeguard for case or just letter
 //(b) if not y or n then send alert to pick valid answer
 
-// var charNumeric = function () {
-//   var confirmNumeric = confirm("Do you want password to contain numbers?")
+var charNumeric = function () {
+  var confirmNumeric = confirm("Do you want password to contain numbers?")
 
-//   if (confirmNumeric) {
-//     //use numbers in pw (add to pw string source)
-//     console.log("yes numbers");
+  if (confirmNumeric) {
+    //use numbers in pw (add to pw string source)
+    console.log("yes numbers");
 
-//   }
-//   else {
-//     console.log("no numbers")
-//     //then don't use numbers in the pw - don't add to pw string source
-//   }
-// }
-// // charNumeric()
-
-
-// // (5) *********  SPECIAL Prompt *********
-// var charSpecial = function () {
-//   var confirmSpecial = confirm("Do you want the password to have special characters?")
-
-//   if (confirmSpecial) {
-//     //use special characters in pw source
-//     console.log("Yes Special")
-//   }
-//   else {
-//     //then dont use special in pw source
-//     console.log("No special");
-//   }
-// }
-// // charSpecial();
+  }
+  else {
+    console.log("no numbers")
+    //then don't use numbers in the pw - don't add to pw string source
+  }
+}
+// charNumeric()
 
 
-//s********** CREATE FUNCTION TO GENERATE Random NEW PW ********/
+// (5) *********  SPECIAL Prompt *********
+var charSpecial = function () {
+  var confirmSpecial = confirm("Do you want the password to have special characters?")
 
+  if (confirmSpecial) {
+    //use special characters in pw source
+    console.log("Yes Special")
+  }
+  else {
+    //then dont use special in pw source
+    console.log("No special");
+  }
+}
+// charSpecial();
+
+debugger
 var generatePassword = function () {
-
+//not taking second entry of charLength to here??
   var userPW = charLength();
   var userValidChoices = userCriteria();
   var password = "";
-  //gen random number passord
-  for (var i = 0; i < userPW; i++) {
+
+  for (var i = 0; i  < userPW; i++ ) {
     var value = Math.floor(Math.random() * (userValidChoices.length));
-    password += userValidChoices[value]
+    password += userValidChoices[value];
   }
   console.log(password);
   console.log(value, userPW, userValidChoices);
-  return password;
-}
+  return  password;
+};
 
 
-  ////*******GIVEN CODE****** */
-  //  // Get references to the #generate element
-  var generateBtn = document.querySelector("#generate");
+////*******GIVEN CODE****** */
+//  // Get references to the #generate element
+ var generateBtn = document.querySelector("#generate");
 
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+// Write password to the #password input
+function writePassword() {
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
-    passwordText.value = "Your new password is " + password + ".";
-  }
+passwordText.value = "Your new password is " + password;
+ };
 
-  //Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword)
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword)

@@ -62,10 +62,7 @@ var charLength = function () {
 // charLength()
 
 
-//(2)  ********* LOWERCASE Prompt *******
-//(a) validate entered yes or no -
-//set safeguard for case or just letter
-//(b) if not y or n then send alert to pick valid answer
+//(2)  ********* USER CRITERIA Validate at least one character type was entered *******
 var userCriteria = function () {
   var confirmLower = confirm("Do you want password to contain lowercase letters?");
   var confirmUpper = confirm("Do you want UPPER CASE letters in the password?");
@@ -101,61 +98,61 @@ var userCriteria = function () {
   }
 
 }
-// charLower();
+// // charLower();
 
-//(3) ********* UPPERCASE Prompt *******
-//(a) validate entered yes or no -
-//set safeguard for case or just letter
-//(b) if not y or n then send alert to pick valid answer
-var charUpper = function () {
-  var confirmUpper = confirm("Do you want UPPERCASE letters in the password?")
+// //(3) ********* UPPERCASE Prompt *******
+// //(a) validate entered yes or no -
+// //set safeguard for case or just letter
+// //(b) if not y or n then send alert to pick valid answer
+// var charUpper = function () {
+//   var confirmUpper = confirm("Do you want UPPERCASE letters in the password?")
 
-  if (confirmUpper) {
-    //use UPPERCASE in pw source string
-    console.log("Yes UPPERS");
-  }
-  else {
-    //then don't use UPPERCASE in the pw - don't add to pw string source
-    console.log("No UPPERS")
-  }
-}
-// charUpper();
+//   if (confirmUpper) {
+//     //use UPPERCASE in pw source string
+//     console.log("Yes UPPERS");
+//   }
+//   else {
+//     //then don't use UPPERCASE in the pw - don't add to pw string source
+//     console.log("No UPPERS")
+//   }
+// }
+// // charUpper();
 
 // (4) ********* NUMERIC Prompt *******
 //(a) validate entered yes or no -
 //set safeguard for case or just letter
 //(b) if not y or n then send alert to pick valid answer
 
-var charNumeric = function () {
-  var confirmNumeric = confirm("Do you want password to contain numbers?")
+// var charNumeric = function () {
+//   var confirmNumeric = confirm("Do you want password to contain numbers?")
 
-  if (confirmNumeric) {
-    //use numbers in pw (add to pw string source)
-    console.log("yes numbers");
+//   if (confirmNumeric) {
+//     //use numbers in pw (add to pw string source)
+//     console.log("yes numbers");
 
-  }
-  else {
-    console.log("no numbers")
-    //then don't use numbers in the pw - don't add to pw string source
-  }
-}
-// charNumeric()
+//   }
+//   else {
+//     console.log("no numbers")
+//     //then don't use numbers in the pw - don't add to pw string source
+//   }
+// }
+// // charNumeric()
 
 
-// (5) *********  SPECIAL Prompt *********
-var charSpecial = function () {
-  var confirmSpecial = confirm("Do you want the password to have special characters?")
+// // (5) *********  SPECIAL Prompt *********
+// var charSpecial = function () {
+//   var confirmSpecial = confirm("Do you want the password to have special characters?")
 
-  if (confirmSpecial) {
-    //use special characters in pw source
-    console.log("Yes Special")
-  }
-  else {
-    //then dont use special in pw source
-    console.log("No special");
-  }
-}
-// charSpecial();
+//   if (confirmSpecial) {
+//     //use special characters in pw source
+//     console.log("Yes Special")
+//   }
+//   else {
+//     //then dont use special in pw source
+//     console.log("No special");
+//   }
+// }
+// // charSpecial();
 
 
 //s********** CREATE FUNCTION TO GENERATE Random NEW PW ********/

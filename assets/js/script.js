@@ -1,10 +1,7 @@
-// Assignment code here
-//isNaN(promptLength) ||
-
 // (1)  ********  LENGTH & VALIDATE prompt ********
 var charLength = function () {
   //a) validate input is filled
-  var promptLength = window.prompt("Let's create your new password. How long do you want it to be? Pick a number between 8 and 128.")
+  var promptLength = window.prompt("Let's create your new password. How long do you want it to be? Pick a number between 8 and 128.");
   //validate a number was typed as opposed to leaving empty or writing out a number
   if (isNaN(promptLength) || promptLength === null  ||  promptLength === "") {
     window.alert("Please pick a number between 8 & 128. Try again.");
@@ -14,7 +11,7 @@ var charLength = function () {
 
   //check if number is equal or greater than eight and less than or equal to 128
   else if (promptLength >= 8 && promptLength <= 128) {
-    console.log(promptLength + " characters long.")
+    console.log(promptLength + " characters long.");
     // promptLength = "";
     return promptLength;
   }
@@ -29,7 +26,6 @@ var charLength = function () {
 
 //(2)  ********* CHARACTER  Prompts *******
 //(a) validate entered yes or no -
-//set safeguard for case or just letter
 //(b) if not y or n then send alert to pick valid answer
 var userCriteria = function () {
   var confirmLower = confirm("Do you want password to contain lowercase letters?");
@@ -46,20 +42,23 @@ var userCriteria = function () {
   var validUserChoices = []
   if (confirmLower) {
     //use lowercase in pw source string
-    console.log("yes lower");
+    console.log("Yes lower");
     validUserChoices += "abcdefghijklmnopqrstuvwxyz";
   }
   if (confirmUpper) {
+  //use UPPERcase in pw source string
     console.log("Yes UPPER");
-    validUserChoices += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    validUserChoices += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
   if (confirmNumeric) {
+  //use Numbers in pw source string
     console.log("Yes numbers");
-    validUserChoices += "0123456789"
+    validUserChoices += "0123456789";
   }
   if (confirmSpecial) {
+  //use Special in pw source string
     console.log("Yes Special");
-    validUserChoices += "$!@&%*~#^()"
+    validUserChoices += "$!@&%*~#^()";
   }
   console.log(validUserChoices, "validUserChoices");
   return validUserChoices;
@@ -67,7 +66,6 @@ var userCriteria = function () {
 }
 
 var generatePassword = function () {
-//not taking second entry of charLength to here??
 var password = ""; 
 var userPW = charLength();
 var userValidChoices = userCriteria();

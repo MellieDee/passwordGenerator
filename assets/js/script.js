@@ -15,13 +15,14 @@ var charLength = function () {
   //check if number is equal or greater than eight and less than or equal to 128
   else if (promptLength >= 8 && promptLength <= 128) {
     console.log(promptLength + " characters long.")
+    // promptLength = "";
     return promptLength;
   }
 
   //if not in range then pick again
   else {
     window.alert("Please pick a number between 8 & 128. Try again.");
-    charLength();
+    return charLength();
   }
 }
 // charLength()
@@ -38,7 +39,7 @@ var userCriteria = function () {
 // debugger
   if (!confirmLower && !confirmUpper && !confirmNumeric && !confirmSpecial) {
     alert("Please pick at least one option.")
-    return userCriteria()
+    return userCriteria();
   }
 
   else {

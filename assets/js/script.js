@@ -38,7 +38,7 @@ var userCriteria = function () {
 // debugger
   if (!confirmLower && !confirmUpper && !confirmNumeric && !confirmSpecial) {
     alert("Please pick at least one option.")
-    userCriteria()
+    return userCriteria()
   }
 
   else {
@@ -70,6 +70,7 @@ var generatePassword = function () {
 var password = ""; 
 var userPW = charLength();
 var userValidChoices = userCriteria();
+console.log(userValidChoices);
 
   for (var i = 0; i  < userPW; i++ ) {
     var value = Math.floor(Math.random() * (userValidChoices.length));

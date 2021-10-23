@@ -10,8 +10,8 @@ var charLength = function () {
     window.alert("Please pick a number between 8 & 128. Try again.");
     promptLength = "";
     return charLength();
-    
   }
+
   //check if number is equal or greater than eight and less than or equal to 128
   else if (promptLength >= 8 && promptLength <= 128) {
     console.log(promptLength + " characters long.")
@@ -25,7 +25,6 @@ var charLength = function () {
   }
 }
 // charLength()
-
 
 //(2)  ********* CHARACTER  Prompts *******
 //(a) validate entered yes or no -
@@ -41,6 +40,7 @@ var userCriteria = function () {
     alert("Please pick at least one option.")
     userCriteria()
   }
+
   else {
   var validUserChoices = []
   if (confirmLower) {
@@ -65,8 +65,6 @@ var userCriteria = function () {
   }
 }
 
-
-
 var generatePassword = function () {
 //not taking second entry of charLength to here??
 var password = ""; 
@@ -81,7 +79,6 @@ var userValidChoices = userCriteria();
   console.log(value, userPW, userValidChoices);
   return  password;
 };
-
 
 ////*******GIVEN CODE****** */
 //  // Get references to the #generate element
